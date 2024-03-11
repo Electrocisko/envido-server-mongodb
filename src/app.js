@@ -20,7 +20,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname+'/public'));
 app.use(cookieParser());
 
-
 // Template config engine
 app.set('views',__dirname+'/views');
 app.set('view engine', 'ejs');
@@ -35,4 +34,6 @@ app.use('/api', loginRouter);
 
 app.listen(PORT, () => {
     console.log('server listening :'+PORT);
-})
+});
+
+

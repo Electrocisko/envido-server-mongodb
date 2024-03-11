@@ -8,7 +8,9 @@ export default {
     },
     database: {
         MONGO_USER: process.env.MONGO_USER,
-        MONGO_PASSWORD: process.env.MONGO_PASSWORD
+        MONGO_PASSWORD: process.env.MONGO_PASSWORD,
+        MONGO_URL: process.env.MONGO_URL,
+        MONGO_DB_NAME: process.env.MONGO_DB_NAME
     },
     session: {
         ADMIN: process.env.ADMIN,

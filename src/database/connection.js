@@ -3,12 +3,12 @@ import config from "../config/dotenvConfig.js";
 
 const MONGO_USER = config.database.MONGO_USER;
 const MONGO_PASSWORD = config.database.MONGO_PASSWORD;
-
-const MONGO_URI = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@cluster0.rvl2uyz.mongodb.net/app-bordados-dev?retryWrites=true&w=majority`;
+const MONGO_URL = config.database.MONGO_URL;
+const MONGO_DB_NAME = config.database.MONGO_DB_NAME
 
 const connection = async () => {
     try {
-        await mongoose.connect(MONGO_URI);
+        await mongoose.connect(MONGO_URL, {dbName:MONGO_DB_NAME });
         console.log("DataBase Conected");
     } catch (error) {
         console.log("Error en conect database");
